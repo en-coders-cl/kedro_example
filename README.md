@@ -120,3 +120,35 @@ To automatically strip out all output cell contents before committing to `git`, 
 ## Package your Kedro project
 
 [Further information about building project documentation and packaging your project](https://kedro.readthedocs.io/en/stable/tutorial/package_a_project.html)
+
+# Some useful commands
+
+```    
+
+kedro new
+kedro new --starter=spaceflights
+pip install -r src/requirements.txt
+kedro ipython
+
+kedro pipeline create data_processing
+
+kedro run --node=preprocess_companies_node
+
+kedro run --runner=ParallelRunner
+kedro run --runner=ThreadRunner
+kedro run --runner=module.path.to.my.runner
+
+kedro build-docs --open
+
+pip install "kedro[all]"
+
+kedro package
+pip install <path-to-wheel-file>
+python -m kedro_tutorial
+
+from kedro_tutorial.__main__ import main
+main(
+    ["--pipeline", "__default__"]
+)  # or simply main() if you don't want to provide any arguments
+
+```
